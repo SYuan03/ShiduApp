@@ -2,18 +2,24 @@ package nju.dsy.shiduapp
 
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.graphics.LinearGradient
 import android.graphics.Shader
+import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.TextPaint
+import android.text.TextWatcher
 import android.text.style.CharacterStyle
 import android.text.style.UpdateAppearance
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -29,6 +35,7 @@ class HomeFragment : Fragment() {
     val TAG = "HomeFragment"
 
     private lateinit var newsDatabaseHelper: NewsDatabaseHelper
+    private lateinit var searchEditText: EditText
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -84,8 +91,38 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = newsAdapter
 
+        super.onViewCreated(view, savedInstanceState)
+
+        // 找到输入框
+        searchEditText = view.findViewById(R.id.searchEditText)
+
+        // 想设置键盘的回车键为搜索，但是不知道为什么不行
+        searchEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                performSearch()
+                return@setOnEditorActionListener true
+            }
+            false
+        }
+
+        // 设置搜索按钮的点击事件
+        val searchIcon = view.findViewById<ImageView>(R.id.searchIcon)
+        searchIcon.setOnClickListener {
+            performSearch()
+        }
+
         return view
 
+    }
+
+    private fun performSearch() {
+        val keyword = searchEditText.text.toString().trim()
+        if (keyword.isNotEmpty()) {
+            // 跳转到百度搜索页面
+            val searchUrl = "https://www.baidu.com/s?wd=$keyword"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(searchUrl))
+            startActivity(intent)
+        }
     }
 
     private fun printNews() {
