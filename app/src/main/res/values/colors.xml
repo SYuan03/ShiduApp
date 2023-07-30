@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- 其他颜色资源 -->
+    <color name="bottom_nav_text_color">#FF3700B3</color>
+    <color name="bottom_nav_icon_color">#4F123202</color>
+
+    <!-- 浅色主题primary color，淡粉色 -->
+    <color name="light_primary">#FFD8E4</color>
+
 </resources>

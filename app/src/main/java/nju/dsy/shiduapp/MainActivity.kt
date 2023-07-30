@@ -1,46 +1,35 @@
 package nju.dsy.shiduapp
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import nju.dsy.shiduapp.ui.theme.ShiduAppTheme
+import android.util.Log
+import android.widget.ImageView
+import android.widget.RelativeLayout
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
+    // tag
+    private val TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            ShiduAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
-    }
-}
+        setContentView(R.layout.activity_main)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ShiduAppTheme {
-        Greeting("Android")
+        Log.v(TAG,"Main activity onCreate ; time = ${System.currentTimeMillis()}")
     }
+
+    override fun onResume() {
+        super.onResume()
+        Log.v(TAG,"Main activity onResume ; time = ${System.currentTimeMillis()}")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.v(TAG,"Main activity onPause ; time = ${System.currentTimeMillis()}")
+    }
+
+
+
 }
