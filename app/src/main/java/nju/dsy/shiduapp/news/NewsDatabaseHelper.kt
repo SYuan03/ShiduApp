@@ -3,18 +3,22 @@ package nju.dsy.shiduapp.news
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 
 class NewsDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
+    // 设置一个tag
+    private val TAG = "newsDatabaseHelper"
+
     companion object {
-        private const val DATABASE_NAME = "news_database"
+        private const val DATABASE_NAME = "news_database_3"
         private const val DATABASE_VERSION = 1
-        private const val TABLE_NAME = "news_table"
-        private const val COLUMN_ID = "id"
-        private const val COLUMN_TITLE = "title"
-        private const val COLUMN_IMAGE_URL = "image_url"
-        private const val COLUMN_SUMMARY = "summary"
-        private const val COLUMN_URL = "url"
+        const val TABLE_NAME = "news_table_3"
+        const val COLUMN_ID = "id"
+        const val COLUMN_TITLE = "title"
+        const val COLUMN_IMAGE_URL = "image_url"
+        const val COLUMN_SUMMARY = "summary"
+        const val COLUMN_URL = "url"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -28,6 +32,7 @@ class NewsDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
             )
         """.trimIndent()
         db?.execSQL(createTableQuery)
+        Log.i(TAG, "onCreate: $createTableQuery")
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {

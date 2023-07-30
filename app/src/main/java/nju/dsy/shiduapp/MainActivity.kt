@@ -1,32 +1,21 @@
 package nju.dsy.shiduapp
 
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.LinearGradient
-import android.graphics.Paint
-import android.graphics.Shader
-import android.graphics.Typeface
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
-import android.text.TextPaint
-import android.text.style.CharacterStyle
-import android.text.style.ForegroundColorSpan
-import android.text.style.ReplacementSpan
-import android.text.style.StyleSpan
-import android.text.style.UpdateAppearance
 import android.util.Log
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import nju.dsy.shiduapp.news.NewsDatabaseHelper
 
 class MainActivity : AppCompatActivity() {
 
     // tag
     private val TAG = "MainActivity"
+    // 其他代码
+    lateinit var newsDatabaseHelper: NewsDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +23,8 @@ class MainActivity : AppCompatActivity() {
 
         Log.v(TAG,"Main activity onCreate ; time = ${System.currentTimeMillis()}")
 
+        // 初始化数据库
+        newsDatabaseHelper = NewsDatabaseHelper(this)
 
         // 设置导航栏点击事件监听
         // 先获取导航栏的各个控件
