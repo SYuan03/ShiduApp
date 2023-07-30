@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 顶部布局，包含天气、LOGO和加号图标 -->
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        >
+
+        <!-- 天气 -->
+        <ImageView
+            android:id="@+id/weatherImage"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/weather_cloudy"
+            />
+
+        <!-- LOGO -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <!-- LOGO -->
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/logo1" />
+
+            <!-- Text -->
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ShiDu"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <!-- 加号图标 -->
+        <ImageView
+            android:id="@+id/plusIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/addnew"
+            />
+    </RelativeLayout>
+
+    <!-- 搜索框 -->
+<!--    <androidx.appcompat.widget.SearchView-->
+<!--        android:id="@+id/searchView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:iconifiedByDefault="false"-->
+<!--        android:queryHint="请输入搜索内容"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/newsList"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/topLayout"-->
+<!--        />-->
+
+    <RelativeLayout
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="8dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="请输入搜索内容"
+        app:layout_constraintBottom_toTopOf="@id/newsList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayout"
+        android:background="#FFFFFF"
+        >
+
+        <!-- 搜索图标 -->
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/ic_search" />
+
+        <!-- 输入框 -->
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/searchIcon"
+            android:layout_marginStart="8dp"
+            android:hint="请输入搜索内容"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+
+    <!-- 新闻列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

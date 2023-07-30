@@ -1,7 +1,22 @@
 package nju.dsy.shiduapp
 
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Paint
+import android.graphics.Shader
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.TextPaint
+import android.text.style.CharacterStyle
+import android.text.style.ForegroundColorSpan
+import android.text.style.ReplacementSpan
+import android.text.style.StyleSpan
+import android.text.style.UpdateAppearance
 import android.util.Log
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -18,6 +33,76 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Log.v(TAG,"Main activity onCreate ; time = ${System.currentTimeMillis()}")
+
+
+        // 设置导航栏点击事件监听
+        // 先获取导航栏的各个控件
+        val home = findViewById<RelativeLayout>(R.id.home)
+        val explore = findViewById<RelativeLayout>(R.id.explore)
+        val music = findViewById<RelativeLayout>(R.id.music)
+        val me = findViewById<RelativeLayout>(R.id.me)
+        val homeText = findViewById<TextView>(R.id.hometext)
+        val homeIcon = findViewById<ImageView>(R.id.homeicon)
+        val exploreText = findViewById<TextView>(R.id.exploretext)
+        val exploreIcon = findViewById<ImageView>(R.id.exploreicon)
+        val musicText = findViewById<TextView>(R.id.musictext)
+        val musicIcon = findViewById<ImageView>(R.id.musicicon)
+        val meText = findViewById<TextView>(R.id.metext)
+        val meIcon = findViewById<ImageView>(R.id.meicon)
+
+        // 设置默认显示的 HomeFragment，并且设置按钮的选中状态
+        showFragment(HomeFragment())
+        setSelectedNavItem(homeText, homeIcon)
+
+        // 导航栏点击事件监听
+        home.setOnClickListener {
+            showFragment(HomeFragment())
+            // 设置按钮的选中状态
+            setSelectedNavItem(homeText, homeIcon)
+            // 清除其他按钮的选中状态
+            clearSelectedNavItem(exploreText, exploreIcon)
+            clearSelectedNavItem(musicText, musicIcon)
+            clearSelectedNavItem(meText, meIcon)
+        }
+        explore.setOnClickListener {
+            showFragment(ExploreFragment())
+            setSelectedNavItem(exploreText, exploreIcon)
+            clearSelectedNavItem(homeText, homeIcon)
+            clearSelectedNavItem(musicText, musicIcon)
+            clearSelectedNavItem(meText, meIcon)
+        }
+        music.setOnClickListener {
+            showFragment(MusicFragment())
+            setSelectedNavItem(musicText, musicIcon)
+            clearSelectedNavItem(homeText, homeIcon)
+            clearSelectedNavItem(exploreText, exploreIcon)
+            clearSelectedNavItem(meText, meIcon)
+        }
+        me.setOnClickListener {
+            showFragment(MeFragment())
+            setSelectedNavItem(meText, meIcon)
+            clearSelectedNavItem(homeText, homeIcon)
+            clearSelectedNavItem(exploreText, exploreIcon)
+            clearSelectedNavItem(musicText, musicIcon)
+        }
+    }
+
+    private fun showFragment(fragment: Fragment) {
+        // 使用 FragmentManager 将 fragment 显示到 activity 中
+        // 切换 fragment 时，使用 replace() 方法
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment, fragment)
+            .commit()
+    }
+
+    private fun setSelectedNavItem(textView: TextView, imageView: ImageView) {
+        textView.isSelected = true
+        imageView.isSelected = true
+    }
+
+    private fun clearSelectedNavItem(textView: TextView, imageView: ImageView) {
+        textView.isSelected = false
+        imageView.isSelected = false
     }
 
     override fun onResume() {

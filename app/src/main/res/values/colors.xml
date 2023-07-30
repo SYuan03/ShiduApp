@@ -15,4 +15,8 @@
     <!-- 浅色主题primary color，淡粉色 -->
     <color name="light_primary">#FFD8E4</color>
 
+
+    <color name="start_color">#A0FE65</color>
+    <color name="end_color">#FA016D</color>
+
 </resources>
