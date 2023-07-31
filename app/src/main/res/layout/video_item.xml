@@ -22,9 +22,10 @@
         <ImageView
             android:id="@+id/videocover"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="260dp"
             android:padding="5dp"
             android:src="@drawable/avatar"
+            android:scaleType="centerCrop"
             card_view:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
 
@@ -42,16 +43,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="6dp"
             card_view:layout_constraintTop_toBottomOf="@+id/videocover">
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_weight="1.5"
+                android:layout_weight="1.2"
                 android:gravity="center_vertical"
-                android:text="作者："
-                android:textSize="12sp"
+                android:text="作者:"
+                android:textSize="17sp"
                 android:layout_gravity="left"
                 />
             <TextView
@@ -61,19 +63,19 @@
                 android:layout_weight="4"
                 android:gravity="center_vertical"
                 android:text="用户"
-                android:textSize="12sp"
+                android:textSize="17sp"
                 android:layout_gravity="left"/>
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:padding="5dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:src="@drawable/ic_like"
                 android:layout_gravity="left"/>
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:padding="5dp"
                 android:src="@drawable/ic_dislike"
                 android:layout_gravity="left"/>

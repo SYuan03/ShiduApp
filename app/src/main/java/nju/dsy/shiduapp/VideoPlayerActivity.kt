@@ -2,6 +2,7 @@ package nju.dsy.shiduapp
 
 import android.os.Bundle
 import android.widget.MediaController
+import android.widget.TextView
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,6 +18,9 @@ class VideoPlayerActivity : AppCompatActivity() {
 
         videoView = findViewById(R.id.video_view)
         videoView.setVideoPath(videoUrl)
+
+        val videoTitleTextView: TextView = findViewById(R.id.video_title)
+        videoTitleTextView.text = intent.getStringExtra("videoTitle")
 
         val mediaController = MediaController(this)
         videoView.setMediaController(mediaController)

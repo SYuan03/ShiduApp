@@ -18,10 +18,11 @@ class ExploreFragment : Fragment() {
     private lateinit var videoRecyclerView: RecyclerView
     private lateinit var videoAdapter: VideoAdapter
 
-    private val videoList = listOf(
+    private val videoList = mutableListOf(
         VideoItem("完整版《ikun话》演唱会", "https://box.nju.edu.cn/f/0dc19474b57743f7b984/?dl=1", "https://box.nju.edu.cn/f/3bb3c56f4b8c4040a1fd/?dl=1", "B站-上海滩许Van强"),
         VideoItem("欧洲人也太容易快乐了", "https://box.nju.edu.cn/f/361f733e6dd74eb09b6f/?dl=1", "https://box.nju.edu.cn/f/3dde3b6e791b41b4ae95/?dl=1", "B站-一本正经的光头张"),
-        // 添加更多视频项
+        VideoItem("敲了一下午的动态水墨画", "https://box.nju.edu.cn/f/30778b038261455c8355/?dl=1", "https://box.nju.edu.cn/f/455f35dab7474e478ff6/?dl=1", "B站-语希编程"),
+        VideoItem("困住自己的究竟是什么？", "https://box.nju.edu.cn/f/838883316eb9466582aa/?dl=1", "https://box.nju.edu.cn/f/82a0db8afce44bcab036/?dl=1", "B站-芝士爱奶盖"),
     )
 
     override fun onCreateView(
@@ -38,6 +39,7 @@ class ExploreFragment : Fragment() {
             // 处理视频项点击事件，在这里跳转到视频播放界面
             val intent = Intent(context, VideoPlayerActivity::class.java)
             intent.putExtra("videoUrl", videoItem.videoUrl)
+            intent.putExtra("videoTitle", videoItem.title)
             startActivity(intent)
         }
 
