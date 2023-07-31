@@ -1,6 +1,7 @@
 package nju.dsy.shiduapp
 
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.MediaController
 import android.widget.TextView
 import android.widget.VideoView
@@ -13,6 +14,12 @@ class VideoPlayerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_player)
+
+        val btnBack:ImageButton = findViewById(R.id.btnBack2)
+        btnBack.setOnClickListener {
+            // 返回到上一个Fragment或Activity
+            onBackPressed()
+        }
 
         val videoUrl = intent.getStringExtra("videoUrl")
 

@@ -11,26 +11,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <!-- 返回按钮 -->
+    <ImageButton
+        android:id="@+id/btnBack2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:src="@drawable/ic_videoreturn"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        tools:ignore="MissingConstraints" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/white"
+        android:background="@drawable/bg2"
         android:gravity="center_vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
 
         <TextView
             android:id="@+id/video_title"
-            android:layout_width="330dp"
+            android:layout_width="300dp"
             android:layout_height="100dp"
             android:maxLines="2"
             android:text="标题"
-            android:textColor="@color/purple_700"
+            android:textColor="#282821"
             android:textSize="30dp"
+            android:fontFamily="@font/hanyi"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp"
+            />
 
         <LinearLayout
             android:layout_width="80dp"

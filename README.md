@@ -1,36 +1,21 @@
-# FinalProject
+# FinalProject-ShiduApp
 
-## Author
+## 作者
 
 NJU 丁晟元
 
-## Introduction
+QQ：1163413566（奔跑的淡水鱼）
+
+Phone：13921306984
+
+## 项目名
 
 十度App，简简简简简简易版百度App
 
-## Progress
+## 项目地址
 
-导航栏，以及跳转
-
-数据库
-
-![image-20230730212041088](README/image-20230730212041088.png)
-
-泪目，终于成功了
-
-完成news的cycleView
-
-搜索栏
-
-**天气**
-
-**视频播放**
-
-**音乐播放**
-
-**个人中心+登录注册**
-
-**上传图片**
+gitee:https://gitee.com/shengyuand/finalproject
+github:https://github.com/SYuan03/ShiduApp
 
 ## 使用说明
 
@@ -40,7 +25,7 @@ NJU 丁晟元
 
 新闻数据使用了数据库，所以使用前应该先加数据，可将`java/nju/dsy/shiduapp/HomeFragment.kt`中的这段代码注释掉，从而添加数据：
 
-![image-20230731090444436](README/image-20230731090444436.png)
+![image-20230731090444436](README/image-20230731090444436.png) 
 
 ### 天气相关
 
@@ -55,3 +40,22 @@ NJU 丁晟元
 获取定位信息：
 
 [Android 天气APP（二）获取定位信息_setneednewversionrgc_初学者-Study的博客-CSDN博客](https://blog.csdn.net/qq_38436214/article/details/105328603)
+
+## 亮点介绍
+
+1. 尝试了多种数据存储方式，既有数据库，也有云存储，也使用了SharedPreferences
+2. 界面简洁，色调和谐温暖（咳咳，迈阿密国际足球俱乐部限定配色主题）
+3. 基本功能完善
+4. 新增音乐播放界面，并且设置了可以无限滚动
+5. 设置了登录注册功能
+6. 可拓展性强，数据改动简单
+
+## 项目演示
+
+见同级目录下DemoVideo文件夹
+
+## 遗憾
+
+比较遗憾的是，由于自身原因没能规划好时间，导致30号才看完视频开始写
+
+😭😭😭

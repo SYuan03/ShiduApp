@@ -61,10 +61,11 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         // load 天气的gif
-        // 加载并播放 GIF 图片
-        // 加载并播放 GIF 图片
+        // 加载并播放 GIF 图片，并且设置透明背景
         val weatherImage: ImageView = view.findViewById(R.id.weatherImage)
-        Glide.with(this).asGif().load(R.drawable.weather_cloudy).into(weatherImage)
+        Glide.with(this).asGif().load(R.drawable.ic_gif2).into(weatherImage)
+
+
 
         // 设置渐变色的ShiDu
         val logoText: TextView = view.findViewById(R.id.textView2)
