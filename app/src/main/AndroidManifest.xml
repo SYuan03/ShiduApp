@@ -24,7 +24,10 @@
             android:name=".WeatherActivity"
             android:exported="true"
             android:label="My Weather Activity"/>
-
+        <activity
+            android:name=".VideoPlayerActivity"
+            android:exported="true"
+            android:label="My Video Player Activity"/>
     </application>
 
 </manifest>
