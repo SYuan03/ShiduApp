@@ -21,6 +21,16 @@
 
         android:padding="16dp">
 
+<!--        头像-->
+        <ImageView
+            android:id="@+id/imageViewAvatar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/avatar"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            />
         <TextView
             android:id="@+id/textViewUsrname"
             android:layout_width="wrap_content"
