@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="120dp"
+    android:layout_height="180dp">
+
+    <TextView
+        android:id="@+id/wth_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="temperature"
+        android:textSize="24sp"
+        android:textColor="#FFA500"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/wth_image"
+        />
+
+    <ImageView
+        android:id="@+id/wth_image"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wth_temperature"
+        app:srcCompat="@drawable/wth_sun" />
+
+    <TextView
+        android:id="@+id/wth_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="time"
+        android:textSize="26sp"
+        android:textColor="#FFA500"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wth_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,16 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <!-- fragment_music.xml -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_music"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:padding="16dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="这里是MusicFragment"
-            android:textSize="24sp" />
-    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

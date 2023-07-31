@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/weather_bg"
+    >
+
+    <!-- 返回按钮 -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_arrow_back_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="returnToHome"
+        />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="宜兴市"
+        android:textSize="60sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:fontFamily="@font/style2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.12"
+        android:layout_margin="16dp"/>
+
+<!--    天气的图片加温度湿度风向居中-->
+    <LinearLayout
+        android:id="@+id/llWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.28"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        >
+
+        <!-- LOGO -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/wth_sun"
+            android:layout_marginTop="10dp"
+            />
+
+        <!-- Text -->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="32℃ 晴\n湿度 30%\n东南风4级"
+            android:layout_marginLeft="15dp"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:gravity="center_vertical"
+            />
+
+    </LinearLayout>
+
+    <!-- 24小时预报 title -->
+
+    <!-- 未来天气 -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/style2"
+        android:text="24小时预报"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/rvFuture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llWeather"
+        app:layout_constraintVertical_bias="0.8"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFuture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        android:background="@android:color/transparent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

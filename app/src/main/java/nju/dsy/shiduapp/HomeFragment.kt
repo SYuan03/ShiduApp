@@ -76,8 +76,10 @@ class HomeFragment : Fragment() {
         // 访问 MainActivity 的 newsDatabaseHelper 变量
         newsDatabaseHelper = mainActivity.newsDatabaseHelper
 
-        // 插入样例数据
-//        insertSampleData()
+        // 循环8次insertSmapleData()，插入16条样例数据
+//        for (i in 1..8) {
+//            insertSampleData()
+//        }
 
         // 获取数据并打印，看看是否成功
 //        printNews()
@@ -109,6 +111,12 @@ class HomeFragment : Fragment() {
         val searchIcon = view.findViewById<ImageView>(R.id.searchIcon)
         searchIcon.setOnClickListener {
             performSearch()
+        }
+
+        // 添加天气页面的点击事件
+        weatherImage.setOnClickListener {
+            val intent = Intent(context, WeatherActivity::class.java)
+            startActivity(intent)
         }
 
         return view
