@@ -78,9 +78,9 @@ class HomeFragment : Fragment() {
         newsDatabaseHelper = mainActivity.newsDatabaseHelper
 
         // 循环8次insertSmapleData()，插入16条样例数据
-//        for (i in 1..8) {
-//            insertSampleData()
-//        }
+        for (i in 1..8) {
+            insertSampleData()
+        }
 
         // 获取数据并打印，看看是否成功
 //        printNews()

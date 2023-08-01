@@ -40,19 +40,21 @@
         android:id="@+id/buttonLogin"
         android:layout_width="213dp"
         android:layout_height="48dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="36dp"
         android:layout_weight="1"
         android:backgroundTint="@color/purple_200"
         android:text="登录"
-        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        />
 
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="213dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:backgroundTint="@color/purple_200"
         android:text="注册"

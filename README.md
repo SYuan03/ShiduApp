@@ -17,7 +17,7 @@ Phone：13921306984
 gitee:https://gitee.com/shengyuand/finalproject
 github:https://github.com/SYuan03/ShiduApp
 
-## 使用说明
+## 使用说明（请务必要看！
 
 ### 数据库相关
 
@@ -41,6 +41,10 @@ github:https://github.com/SYuan03/ShiduApp
 
 [Android 天气APP（二）获取定位信息_setneednewversionrgc_初学者-Study的博客-CSDN博客](https://blog.csdn.net/qq_38436214/article/details/105328603)
 
+### 搜索框
+
+输完内容要点击搜索按钮才行，可以无限输入，会滑动的
+
 ## 亮点介绍
 
 1. 尝试了多种数据存储方式，既有数据库，也有云存储，也使用了SharedPreferences
@@ -53,6 +57,8 @@ github:https://github.com/SYuan03/ShiduApp
 ## 项目演示
 
 见同级目录下DemoVideo文件夹
+
+注：信息页面其实是有头像的，演示视频录的时候没录进去
 
 ## 遗憾
 
